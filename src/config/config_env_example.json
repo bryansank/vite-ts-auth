@@ -1,0 +1,13 @@
+{
+  "API": {
+    "SPOTIFY_DEV_CLIENT_ID": "",
+    "SPOTIFY_DEV_SECRET": "",
+    "SPOTIFY_AUTH": "https://accounts.spotify.com/authorize",
+    "SPOTIFY_TOKEN": "https://accounts.spotify.com/api/token",
+
+    "TWITTER_DEV_CLIENT_ID": "",
+    "TWITTER_DEV_SECRET": "",
+    "TWITTER_AUTH": "https://twitter.com/i/oauth2/authorize",
+    "TWITTER_TOKEN": "https://api.twitter.com/oauth2/token"
+  }
+}
