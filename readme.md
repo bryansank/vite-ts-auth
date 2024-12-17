@@ -59,11 +59,24 @@ Antes de iniciar el proyecto, asegúrate de tener instalado:
 
    ```json
    {
-     "SPOTIFY_DEV_CLIENT_ID": "tu-client-id",
-     "SPOTIFY_DEV_SECRET": "tu-client-secret",
-     "SPOTIFY_REDIRECT_URL": "http://localhost:5173/callback",
-     "SPOTIFY_AUTH": "https://accounts.spotify.com/authorize",
-     "SPOTIFY_TOKEN": "https://accounts.spotify.com/api/token"
+    "API": {
+      "SPOTIFY_DEV_CLIENT_ID": "tu-client-id",
+      "SPOTIFY_DEV_SECRET": "tu-secrect-id",
+      "SPOTIFY_AUTH": "https://accounts.spotify.com/authorize",
+      "SPOTIFY_TOKEN": "https://accounts.spotify.com/api/token",
+      "SPOTIFY_REDIRECT_URL": "tu-redirect",
+      "SPOTIFY_GETME_DATA_URL": "https://api.spotify.com/v1/me",
+  
+      "TWITTER_DEV_CLIENT_ID": "",
+      "TWITTER_DEV_SECRET": "",
+      "TWITTER_AUTH": "",
+      "TWITTER_TOKEN": ""
+    },
+  
+    "PROXY": {
+      "REDIRECT_PROXY": "https://cors-anywhere.herokuapp.com/"
+    }
+
    }
    ```
 
