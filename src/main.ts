@@ -1,37 +1,47 @@
 import "./assets/style.css";
-import { setupCounter } from "./counter.ts";
-import SpotifySocialLogin from "./socialmedia/spotify/spotify.ts";
+import { renderNavContainer } from "./nav";
+import { routerFn } from "./router";
+import { Utils } from "./utils/utilsFn";
 
-function createApp(): HTMLElement {
-  const container = document.createElement("div");
+const utils = new Utils();
 
-  const header = document.createElement("h1");
-  header.textContent = "Vite + TypeScript";
+async function renderRouter(): Promise<void> {
+  const app: HTMLElement | null = document.getElementById("app");
+  const nav: HTMLElement | null = document.getElementById("nav");
 
-  const card = document.createElement("div");
-  card.className = "card";
+  // meterle traduccion  TODO
+  if (!app) throw new Error("No se encontró el elemento #app");
+  if (!nav) throw new Error("No se encontró el elemento #nav");
 
-  const button = document.createElement("button");
-  button.id = "counter";
-  button.type = "button";
-  card.appendChild(button);
+  app.innerHTML = "";
+  nav.innerHTML = "";
 
-  const paragraph = document.createElement("p");
-  paragraph.className = "read-the-docs";
-  paragraph.textContent = "Hola, esta es una aplicación Vite con TypeScript";
+  nav.appendChild(renderNavContainer());
 
-  container.appendChild(header);
-  container.appendChild(card);
-  container.appendChild(paragraph);
+  await switchRouter(app);
 
-  //all
-  container.appendChild(SpotifySocialLogin());
-
-  return container;
+  return;
 }
 
-const app = document.querySelector<HTMLDivElement>("#app");
-if (app) {
-  app.appendChild(createApp());
-  setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+async function switchRouter(app: HTMLElement): Promise<void> {
+  await routerFn(app); //appendChild is mutable
+  return;
 }
+
+// Escucha los cambios en el historial de rutas,
+// evento de atras o adelante en el historial.
+// No afecta el cambio de URL.
+window.addEventListener("popstate", async () => {
+  await renderRouter();
+});
+
+window.setInterval(() => {
+  // console.log(":asdsad");
+
+  utils.createIntervalCheckSpotifyExpiredSession();
+}, 1000);
+
+window.addEventListener("DOMContentLoaded", async () => {
+  // Renderiza la ruta inicial
+  await renderRouter();
+});

@@ -1,0 +1,12 @@
+{
+  "user-read-private": "Acceso a la información del perfil privado del usuario (p. ej., país, plan).",
+  "user-read-email": "Acceso a la dirección de correo del usuario.",
+  "playlist-read-private": "Leer listas de reproducción privadas.",
+  "playlist-modify-public": "Modificar listas de reproducción públicas.",
+  "user-library-read": "Acceso a la biblioteca de canciones guardadas del usuario.",
+  "user-library-modify": "Modificar la biblioteca de canciones guardadas.",
+  "user-read-playback-state": "Leer el estado de reproducción del usuario.",
+  "user-modify-playback-state": "Modificar el estado de reproducción del usuario.",
+  "streaming": "Reproducir canciones desde la aplicación.",
+  "app-remote-control": "Usar el control remoto de la aplicación de Spotify."
+}

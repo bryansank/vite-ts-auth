@@ -231,3 +231,11 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,windows,git
+
+
+# my files
+config_env.json
+.env
+package-lock.json
+*.rar
+*.zip
