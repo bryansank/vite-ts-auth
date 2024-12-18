@@ -4,6 +4,7 @@ import {
 } from "../../../../utils/spotify/constants/options";
 import { SessionUtils } from "../../../../utils/sessionStg";
 import { Utils } from "../../../../utils/utilsFn";
+import { setupSpotifyPlayer } from "../../../../utils/spotifySdk";
 
 //urls
 const GET_INFO_SPOTIFY_URL: string = `${SPOTIFY_ST.SPOTIFY_GETME_DATA_URL}`;
@@ -49,6 +50,9 @@ export const renderDataSpotify = async () => {
   if (data.error) {
     return;
   }
+
+  const token: string = sessionStorageClass.getTokenService("spotify");
+  await setupSpotifyPlayer(token);
 
   const container = document.createElement("div");
   container.innerHTML = `
